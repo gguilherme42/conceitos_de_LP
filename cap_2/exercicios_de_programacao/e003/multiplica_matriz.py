@@ -16,21 +16,15 @@ matrix_B = Matrix([ [1,-2],
 
 def multiply_matrix(a: Matrix, b: Matrix) -> Matrix:
     result =[]
-    if a.lines == b.columns:
-        i = 0
-        while i < a.lines:
+    if a.columns == b.lines:
+        for i in range(a.lines):
             new_elements = []
-            p = 0
-            while p < b.columns:
+            for p in range(b.columns):
                 product = 0
-                j = 0
-                while j < a.columns:
+                for j in range(a.columns):
                     product += a.elements[i][j] * b.elements[j][p]
-                    j += 1
-                
                 new_elements.append(product)
-                p += 1
-            i += 1
+
 
 
                   
